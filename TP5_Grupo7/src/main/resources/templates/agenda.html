@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<meta charset="UTF-8">
-		
+		<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
 	
@@ -21,7 +21,10 @@
 				por medio de la risa.<br/><br/>
 			</p>
 		</section>
-		<video src="../static/videos/video.mp4" controls="controls"></video>
+		<video src="/videos/video.mp4" controls="controls"></video>
 		<footer th:replace="/layouts/footer::footer"></footer>
+		<script src="/webjars/jquery/jquery.min.js" type="text/javascript"></script>
+		<script src="/webjars/popper.js/umd/popper.min.js" type="text/javascript"></script>
+		<script src="/webjars/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 	</body>
 </html>
