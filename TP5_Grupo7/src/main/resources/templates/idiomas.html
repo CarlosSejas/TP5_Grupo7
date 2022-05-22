@@ -1,28 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Idiomas</title>
 </head>
 <body>
-<header>
-	<h1>Idiomas</h1>
-	<img src="../static/images/idiomas.png" alt="imagen de banderas" title="imagen ilustrativa de idiomas" width="700px" height="300px" />
-</header>
 
-<nav>
-	
-	<ul>
-      <li> <a href="index.html"> Inicio</a></li>
-       <li> <a href="agenda.html" >Agenda</a></li>
-        <li> <a href="beneficios.html" > Beneficios y Beca</a></li>
-         <li> <a href="contactos.html" > Contactanos</a></li>
-       
-	</ul>
-
-	</nav>
-	
+<header th:replace="/layouts/header::header"></header>
 	<section>
 	<h2>Cursos disponibles de Idiomas</h2>
 		<p>Aprender otro idioma no es solamente aprender palabras diferentes para las mismas cosas, sino aprender otra manera de pensar acerca de las cosas</p><br/>
@@ -74,9 +59,6 @@
 
 	</section>
 	
-	<footer><br/>
-			<p>2022. Portal de Capacitación – Av. Gral. Manuel Belgrano 789 – Teléfono (388) 999999 S. S. de Jujuy República 
-	Argentina.</p><br/>
-		</footer>
+	<footer th:replace="/layouts/footer::footer"></footer>
 </body>
 </html>

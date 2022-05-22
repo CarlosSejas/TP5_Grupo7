@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,24 +12,7 @@
 
 <body>
 
-<header>
-	<h1>CONTACTOS</h1>
-	<img src="../static/images/contactos.jpg" alt="Imagen de contactos" title="Muestra de mi imagen" width="600px" height="200px" />
-</header>
-
-	<nav>
-	
-	
-	<ul>
-      <li> <a href="index.html"> Inicio</a></li>
-       <li> <a href="agenda.html" >Agenda</a></li>
-        <li> <a href="beneficios.html" > Beneficios y Beca</a></li>
-         <li> <a href="contactos.html" > Contactanos</a></li>
-       
-	</ul>
-
-	</nav>
-
+<header th:replace="/layouts/header::header"></header>
 <form  action="contactos.html" method="GET">
 	
 	<label for="Nombre">Nombre y Apellido</label>
@@ -91,10 +74,7 @@
 <button type="submit">Enviar Datos</button>
 </form>
 
-<footer>
-<p>2022. Portal de Capacitación – Av. Gral. Manuel Belgrano 789 – Teléfono (388) 999999 S. S. de Jujuy República
-Argentina.</p>
-</footer>
+<footer th:replace="/layouts/footer::footer"></footer>
 
 
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<meta charset="UTF-8">
 		
@@ -7,18 +7,7 @@
 		<title>Agenda</title>
 	</head>
 	<body>
-		<header>
-			<h1>CALENDARIO 2022</h1>
-			<img alt="aquí un calendario" src="../static/images/calendario.jpg" title="un calendario" height="400" width="700">
-		</header>
-		<nav>
-			<ul>
-				<li> <a href="index.html">Inicio</a></li>
-				<li> <a href="agenda.html" >Agenda</a></li>
-				<li> <a href="beneficios.html">Beneficios y Becas</a></li>
-				<li> <a href="contactos.html">Contáctanos</a></li>
-			</ul>
-		</nav>
+		<header th:replace="/layouts/header::header"></header>
 		<section>
 			<p>
 				<br/>¿Sabías que ...?<br/>
@@ -31,9 +20,6 @@
 			</p>
 		</section>
 		<video src="../static/videos/video.mp4" controls="controls"></video>
-		<footer><br/>
-			<p>2022. Portal de Capacitación – Av. Gral. Manuel Belgrano 789 – Teléfono (388) 999999 S. S. de Jujuy República 
-	Argentina.</p><br/>
-		</footer>
+		<footer th:replace="/layouts/footer::footer"></footer>
 	</body>
 </html>
