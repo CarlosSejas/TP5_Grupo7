@@ -15,67 +15,65 @@
 <body>
 
 <header th:replace="/layouts/header::header"></header>
-<form  action="contactos.html" method="GET">
-	
-	<label for="Nombre">Nombre y Apellido</label>
-    <input type="text" name="Nombre">
-    <br/>
-     <label> Provincias</label>
-    <select name="provincias">
-
-    	<option name="jujuy" >Jujuy</option>
-    	<option name="Buenos Aires">Buenos Aires</option>
-    	<option name="Santa Fe">Santa Fe</option>
-        <option name="La Rioja">La Rioja</option>
-        <option name="Chaco">Chaco</option>
-        <option name="Santiago de Estero">Santiago del Estero</option>
-        <option name="Salta">Salta</option>
-        <option name="Tucuman">Tucuman</option>
-        <option name="Tierra del Fuego">Tierra del Fuego</option>
-        <option name="Cordoba">Cordoba</option>
-        <option name="Neuquen">Neuquen</option>
-        <option name="Corrientes">Corrientes</option>
-        <option name="La Pampa">La Pampa</option>
-        <option name="Santa Cruz">Santa Cruz</option>
-        <option name="Rio Negro">Rio Negro</option>
-        <option name="San Juan">San Juan</option>
-        <option name="Formosa">Formosa</option>
-        <option name="Catamarca">Catamarca</option>
-        <option name="Mendoza">Mendoza</option>
-        <option name="San Luis">San Luis</option>
-        <option name="Entre Rios">Entre Rios</option>
-        <option name="Misiones">Misiones</option>
-        <option name="Chubut">Chubut</option>
+<div class="cont">
+<div class="contenedor">
+<div class="form">
 
 
+<form action="/action_page.php">
 
-    </select>
-
-    <br/>
-
-
-
-    <label for="Telefono">Telefono</label>
-    <input type="text" name="Telefono">
-    <br/>
-    <label for="correo">Correo Electronico</label>
-    <input type="email" name="correo">
-
-    <br/>
-
-    <label for="situacion">Estado Civil</label><br/>
-    <input type="radio" name="casado">Casado<br/>
-    <input type="radio" name="soltero">Soltero<br/>
-    <input type="radio" name="otro ">Otro<br/>
-
-<label for="mensaje">Mensaje :</label>
-<textarea name="textoIngresado"></textarea>
-<br/>
-
-
-<button type="submit">Enviar Datos</button>
+  <div class="mb-3">
+  
+    <label for="nombre" class="form-label">Nombre y Apellido:</label>
+   <input type="text" class="form-control" placeholder="Normal input" name="nombre">
+  </div>
+   <label for="nombre" class="form-label">Provincia:</label>
+  <select class="form-select">
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+  <option>4</option>
+</select>
+  <div class="mb-3">
+    <label for="telefono" class="form-label">Telefono:</label>
+   <input type="text" class="form-control" placeholder="Normal input">
+  </div>
+   <div class="mb-3 mt-3">
+    <label for="email" class="form-label">Email:</label>
+    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+  </div>
+  
+  <div class="mb-3">
+    <label for="telefono" class="form-label">Telefono:</label>
+   <input type="text" class="form-control" placeholder="Normal input">
+  </div>
+  
+   <label for="telefono" class="form-label">Estado civil:</label>
+  <div class="form-check">
+  <input type="radio" class="form-check-input" id="radio1" name="optradio" value="casado" checked>Casado
+  <label class="form-check-label" for="radio1"></label>
+</div>
+<div class="form-check">
+  <input type="radio" class="form-check-input" id="radio2" name="optradio" value="soltero">Soltero
+  <label class="form-check-label" for="radio2"></label>
+</div>
+<div class="form-check">
+<input type="radio" class="form-check-input" id="radio2" name="optradio" value="option3">Option 3
+  <label class="form-check-label" forn="option3"></label>
+</div>
+  <label for="comment">Comments:</label>
+<textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+  
+  
+  
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
+</div>
+
+</div>
+</div>
 <footer th:replace="/layouts/footer::footer"></footer>
 	
 	<script src="/webjars/jquery/jquery.min.js" type="text/javascript"></script>
