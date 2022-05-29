@@ -2,8 +2,12 @@ package ar.edu.unju.fi.controller;
 
 import java.util.Optional;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,6 +24,7 @@ import ar.edu.unju.fi.model.Beca;
 @Controller
 @RequestMapping("/becas")
 public class BecaController {
+	private static final Log LOGGER = LogFactory.getLog(BecaController.class);
 	@GetMapping("/listaBecas")
 	public ModelAndView getListadoBecasPage() {
 		ModelAndView mav = new ModelAndView("lista_becas");
@@ -37,7 +42,16 @@ public class BecaController {
 	}
 	
 	@PostMapping("/guardar")
-	public ModelAndView getListaAlumnosPage(@ModelAttribute("beca")Beca beca) {
+	public ModelAndView getListaAlumnosPage(@Validated @ModelAttribute("beca")Beca beca,BindingResult bindingResult) {
+		
+		if(bindingResult.hasErrors()) {
+			LOGGER.error("No se cumplen las reglas de validación");
+			ModelAndView mav = new ModelAndView("nuevo_beca");
+			mav.addObject("beca",beca);
+			ListaCurso listaCursos = new ListaCurso();
+			mav.addObject("cursos", listaCursos.getCurso());
+			return mav;
+		}
 		ModelAndView mav = new ModelAndView("lista_becas");
 		// creo un objeto de la clase ListaAlumno, donde está el arrayList
 		ListaBeca listaBecas = new ListaBeca();
@@ -46,7 +60,7 @@ public class BecaController {
 		beca.setCurso(curso.get());
 		//recupero el arrayList y agrego un objeto alumno a lista
 		if(listaBecas.getBecas().add(beca)) {
-			//LOGGER.info("Se agregó un objeto al arrayList de alumnos");
+			LOGGER.info("Se agregó un objeto al arrayList de beca");
 		}
 		//enviar el arrayList de alumnos a la página lista_alumnos
 		mav.addObject("becas", listaBecas.getBecas());

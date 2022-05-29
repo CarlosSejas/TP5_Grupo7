@@ -18,6 +18,7 @@
 				<div class="mb-3">
 					<label for="dniId" class="form-label">Codigo</label> 
 					<input  th:field="*{codigo}" type="number" class="form-control" id="codigoId" placeholder="Ingrese codigo">
+					<div class="text-danger" th:if="${#fields.hasErrors('codigo')}" th:errors="*{codigo}"></div>
 				</div>
 				<div class="mb-3">
 					<label for="nombresId" class="form-label">Curso</label>
@@ -27,18 +28,22 @@
 							th:text="${curso.titulo}"
 						/>
 					</select>
+					<div class="text-danger" th:if="${#fields.hasErrors('curso')}" th:errors="*{curso}"></div>
 				</div>
 				<div class="mb-3">
-					<label for="apellidosId" class="form-label">Fecha de inicio</label> 
+					<label for="finicioId" class="form-label">Fecha de inicio</label> 
 				 	<input  th:field="*{finicio}" type="date" class="form-control" id="finicioId" placeholder="Ingrese apellidos">
+					<div class="text-danger" th:if="${#fields.hasErrors('finicio')}" th:errors="*{finicio}"></div>
 				</div>
 				<div class="mb-3">
-					<label for="emailId" class="form-label">Fecha de cierre</label> 
+					<label for="fcierreId" class="form-label">Fecha de cierre</label> 
 					  <input th:field="*{fcierre}" type="date" class="form-control" id="fcierreId" placeholder="Ingrese e-mail">
+						<div class="text-danger" th:if="${#fields.hasErrors('fcierre')}" th:errors="*{fcierre}"></div>
 				</div>
 				<div class="mb-3">
-					<label for="telefonoId" class="form-label">Estado</label> 
+					<label for="estadoId" class="form-label">Estado</label> 
 					<input th:field="*{estado}" type="text" class="form-control" id="estadoId" placeholder="Ingrese estado">
+					<div class="text-danger" th:if="${#fields.hasErrors('estado')}" th:errors="*{estado}"></div>
 				</div>
 				<div class="mb-3">
 				</div>
@@ -50,7 +55,7 @@
 			</form>
 		</div>
 		<br><br>
-</div>	
+</div>
 		<footer th:replace="/layouts/footer :: footer"></footer>
 		<script type="text/javascript" th:src="@{/webjars/jquery/3.6.0/jquery.min.js}"></script>
 		<script type="text/javascript" th:src="@{/webjars/popper.js/2.9.3/umd/popper.min.js}"></script>
