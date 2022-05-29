@@ -20,22 +20,27 @@
 				<div class="mb-3">
 					<label for="dni" class="form-label">Dni</label> 
 					<input  th:field="*{dni}" type="number" class="form-control" id="legajo" placeholder="Ingrese Dni">
+					<div class="text-danger" th:if="${#fields.hasErrors('dni')}" th:errors="*{dni}"></div>
 				</div>
 				<div class="mb-3">
 					<label for="nombres" class="form-label">Nombres</label> 
 					<input  th:field="*{nombre}" type="text" class="form-control" id="nombres" placeholder="Ingrese nombres">
+					<div class="text-danger" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></div>
 				</div>
 				<div class="mb-3">
 					<label for="apellidos" class="form-label">Apellidos</label> 
 					<input  th:field="*{apellido}" type="text" class="form-control" id="apellidos" placeholder="Ingrese apellidos">
+					<div class="text-danger" th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}"></div>
 				</div>
 				<div class="mb-3">
 					<label for="email" class="form-label">E-mail</label> 
 					<input th:field="*{email}" type="email" class="form-control" id="email" placeholder="Ingrese e-mail">
+					<div class="text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
 				</div>
 				<div class="mb-3">
 					<label for="telefono" class="form-label">Teléfono</label> 
 					<input th:field="*{telefono}" type="text" class="form-control" id="telefono" placeholder="Ingrese telefono">
+					<div class="text-danger" th:if="${#fields.hasErrors('telefono')}" th:errors="*{telefono}"></div>
 				</div>
 				<div class="d-grid gap-2 d-md-flex justify-content-md-end">
 					<button class="btn btn-primary me-md-2" type="submit">Enviar</button>

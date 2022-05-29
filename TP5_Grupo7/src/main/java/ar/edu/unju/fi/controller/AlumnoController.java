@@ -1,7 +1,11 @@
 package ar.edu.unju.fi.controller;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,6 +17,9 @@ import ar.edu.unju.fi.util.ListaAlumno;
 @Controller
 @RequestMapping("/alumno")
 public class AlumnoController {
+	
+	private static final Log LOGGER = LogFactory.getLog(CursoController.class);
+	
 	@GetMapping("/nuevo")
 	public String getAlumnoPage(Model modelo) {
 		modelo.addAttribute("alumno",new Alumno());
@@ -20,11 +27,19 @@ public class AlumnoController {
 	}
 	
 @PostMapping("/guardar")
-public ModelAndView getListaAlumno(@ModelAttribute("alumno")Alumno alumno)
+public ModelAndView getListaAlumno(@Validated @ModelAttribute("alumno")Alumno alumno,BindingResult bindingResult)
 {
+		if(bindingResult.hasErrors()) {
+			ModelAndView mav = new ModelAndView("nuevo_alumno");
+			mav.addObject("alumno", alumno);
+			return mav;
+		}
 		ModelAndView mav = new ModelAndView("lista_alumnos");
 		ListaAlumno lista = new ListaAlumno();
-		lista.getAlumnos().add(alumno);
+		if(lista.getAlumnos().add(alumno))
+		{
+		LOGGER.info("se agrego un objeto a la lista de alumnos");
+		}
 		mav.addObject("lista",lista.getAlumnos());
 		return mav;
 }
