@@ -2,12 +2,16 @@ package ar.edu.unju.fi.model;
 
 import java.time.LocalDate;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class Curso {
 
 	private int codigo;
 	private String titulo;
 	private String categoria;
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private LocalDate finicio;
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private LocalDate ffin;
 	private int canthoras;
 	private String modalidad;
