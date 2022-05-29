@@ -20,28 +20,34 @@
 				<div class="mb-3">
 					<label for="codigoid" class="form-label">Codigo</label> 
 					<input  th:field="*{codigo}" type="number" class="form-control" id="codigoid" placeholder="Ingrese Codigo">
+					<div class="text-danger" th:if="${#fields.hasErrors('codigo')}" th:errors="*{codigo}"></div>
 				</div>
 				<div class="mb-3">
 					<label for="tituloid" class="form-label">Titulo</label> 
 					<input  th:field="*{titulo}" type="text" class="form-control" id="tituloid" placeholder="Ingrese titulo">
+					<div class="text-danger" th:if="${#fields.hasErrors('titulo')}" th:errors="*{titulo}"></div>	
 				</div>
 				<div class="mb-3">
 					<label for="categoriaid" class="form-label">Categoria</label> 
 					<input  th:field="*{categoria}" type="text" class="form-control" id="categoriaid" placeholder="Ingrese Categoria">
+					<div class="text-danger" th:if="${#fields.hasErrors('categoria')}" th:errors="*{categoria}"></div>
 				</div>
 				<div class="mb-3">
 					<label for="finicioid" class="form-label">Fecha de inicio</label> 
 					<input th:field="*{finicio}" type="date" class="form-control" id="finicioid" placeholder="Ingrese fecha de inicio">
+					<div class="text-danger" th:if="${#fields.hasErrors('finicio')}" th:errors="*{finicio}"></div>				
 				</div>
 				
 				 <div class="mb-3">
 					<label for="ffinid" class="form-label">Fecha de fin</label> 
 					<input th:field="*{ffin}" type="date" class="form-control" id="ffinid" placeholder="Ingrese fecha de fin">
+					<div class="text-danger" th:if="${#fields.hasErrors('ffin')}" th:errors="*{ffin}"></div>
 				</div>
 				
 				<div class="mb-3">
 					<label for="canthorasid" class="form-label">Cantidad de horas</label> 
 					<input th:field="*{canthoras}" type="number" class="form-control" id="canthorasid" placeholder="Ingrese cant de horas">
+					<div class="text-danger" th:if="${#fields.hasErrors('canthoras')}" th:errors="*{canthoras}"></div>
 				</div>
 				
 				<div class="mb-3">
@@ -53,6 +59,8 @@
 					  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"  th:field="*{modalidad}" value="Presencial">
 					  <label class="form-check-label" for="inlineRadio2">Presencial</label>
 					</div>
+					<div class="text-danger" th:if="${#fields.hasErrors('modalidad')}" th:errors="*{modalidad}"></div>
+				</div>
 				
 				<div class="mb-3">
 					<label for="docenteId" class="form-label">Docente</label> 
@@ -62,6 +70,7 @@
 							th:text="${docente.apellido}+', '+${docente.nombre}"
 						/>
 					</select>
+					<div class="text-danger" th:if="${#fields.hasErrors('docente')}" th:errors="*{docente}"></div>
 					</div>
 				
 				

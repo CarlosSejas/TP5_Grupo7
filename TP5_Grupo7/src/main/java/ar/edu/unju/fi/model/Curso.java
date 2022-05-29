@@ -2,19 +2,33 @@ package ar.edu.unju.fi.model;
 
 import java.time.LocalDate;
 
+import javax.validation.constraints.Future;
+import javax.validation.constraints.FutureOrPresent;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
 import org.springframework.format.annotation.DateTimeFormat;
 
 public class Curso {
-
+	@Min(value=1, message="El valor mínimo es 1") @Max(value=9999,message="El valor máximo permitido es 9999")
 	private int codigo;
+	@NotEmpty(message="El título no puede ser vacío")
 	private String titulo;
+	@NotEmpty(message="Categoría no puede ser vacío")
 	private String categoria;
+	@NotNull @FutureOrPresent(message="La fecha debe ser hoy o posterior")
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private LocalDate finicio;
+	@NotNull @Future(message="La fecha debe ser posterior a la actual")
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private LocalDate ffin;
+	@Min(value=1,message="Cantidad de horas debe ser mayor a 1")
 	private int canthoras;
+	@NotEmpty(message="Modalidad no puede ser vacío")
 	private String modalidad;
+	@NotNull(message="Debe seleccionar un docente")
 	private Docente docente;
 	public Curso() {
 		// TODO Auto-generated constructor stub
