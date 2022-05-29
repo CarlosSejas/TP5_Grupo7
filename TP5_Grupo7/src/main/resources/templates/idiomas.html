@@ -12,21 +12,35 @@
 <header th:replace="/layouts/header::header"></header>
 <div class="cont">
 	<section>
-	<h2>Cursos disponibles de Idiomas</h2>
-		<p>Aprender otro idioma no es solamente aprender palabras diferentes para las mismas cosas, sino aprender otra manera de pensar acerca de las cosas</p><br/>
+	 <center>
+	<h1>Cursos disponibles de Idiomas </h1>
+	</center>
 
-		<table border="1">
-		
+<br>
+
+	<div>
+	<img src="/images/idiomas.jpg" width="800" class="rounded mx-auto d-block img-fluid" >
+	
+	<small class="lead">Aprender otro idioma no es solamente aprender palabras diferentes para las mismas cosas, sino aprender otra manera de pensar acerca de las cosas</small>
+
+
+	</div>
+	<br>
+	<div class="table-responsive">
+	
+		<table border="1" class="table table-bordered border-dark " >
+		<thead class="table-dark">
 		<tr>
+		 
 			<td>Titulo del curso</td>
 			<td>Fecha de inicio</td>
 			<td>Horario</td>
 			<td>Fecha fin</td>
-			<td>Modalida (presencial/virtual)</td>
+			<td>Modalidad (presencial/virtual)</td>
 			<td>Docente</td>
 			<td>Duracion de semana</td>
-
 		</tr>	
+		</thead>
 
 		<tr>
 			<td>Ingles</td>
@@ -58,10 +72,14 @@
 			<td>48 semanas</td>
 
 		</tr>
-		</table>
+	</table>
+	
+	</div>
+
 
 	</section>
 	</div>
+	<br>
 	<footer th:replace="/layouts/footer::footer"></footer>
 	
 	<script src="/webjars/jquery/jquery.min.js" type="text/javascript"></script>
