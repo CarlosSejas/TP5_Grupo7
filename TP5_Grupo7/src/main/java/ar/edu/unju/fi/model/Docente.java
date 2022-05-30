@@ -5,6 +5,9 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Docente {
 	@Min(value=1, message="El valor mínimo permitido es 1") @Max(value=9999,message="El valor máximo permitido es 9999")
 	private int legajo;

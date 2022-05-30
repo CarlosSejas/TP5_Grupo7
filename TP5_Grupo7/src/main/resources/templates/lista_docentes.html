@@ -31,14 +31,15 @@
 							<th>Opciones</th>
 						</tr>	
 						<tr th:each="docente: ${lista}">
-							<td th:text="${docente.legajo}"></td>
+							<td th:text="${#numbers.formatInteger(docente.legajo,4,'POINT')}"></td>
+							<!--  <td th:text="${docente.legajo}"></td>-->
 							<td th:text="${docente.apellido}"></td>
 							<td th:text="${docente.nombre}"></td>
 							<td th:text="${docente.email}"></td>
 							<td th:text="${docente.telefono}"></td>
 							<td>
-							<a href="#" id="editarDocente" class="btn btn-warning">Editar</a>
-							<a href="#" id="eliminarDocente" class="btn btn-danger">Eliminar</a>
+							<a th:href="@{/docente/editar/}+${docente.legajo}" id="editarDocente" class="btn btn-warning">Editar</a>
+							<a th:href="@{/docente/eliminar/}+${docente.legajo}" id="eliminarDocente" class="btn btn-danger">Eliminar</a>
 							</td>
 						</tr>
 					</table>

@@ -33,15 +33,16 @@
 						</tr>	
 						
 						<tr th:each="beca: ${becas}">
-							<td th:text="${beca.codigo}"></td>
+							<td th:text="${#numbers.formatInteger(beca.codigo,4,'POINT')}"></td>
+							<!-- <td th:text="${beca.codigo}"></td> -->
 							
 							<td th:text="${beca.curso.titulo}"></td>
 							<td th:text="${beca.finicio}"></td>
 							<td th:text="${beca.fcierre}"></td>
 							<td th:text="${beca.estado}"></td>
 							<td>
-							<a href="#" id="editarAlumno" class="btn btn-warning">Editar</a>
-							<a href="#" id="eliminarAlumno" class="btn btn-danger">Eliminar</a>
+							<a th:href="@{/becas/editar/}+${beca.codigo}" id="editarBeca" class="btn btn-warning">Editar</a>
+							<a th:href="@{/becas/eliminar/}+${beca.codigo}" id="eliminarBeca" class="btn btn-danger">Eliminar</a>
 							</td>
 						</tr>
 					</table>

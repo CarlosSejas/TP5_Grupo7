@@ -10,7 +10,9 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Beca {
 
 	@Min(value=1, message="El valor mínimo permitido es 1") @Max(value=9999,message="El valor máximo permitido es 9999")

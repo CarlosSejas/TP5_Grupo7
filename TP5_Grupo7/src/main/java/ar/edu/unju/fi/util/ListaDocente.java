@@ -3,9 +3,11 @@ package ar.edu.unju.fi.util;
 import java.util.ArrayList;
 import java.util.Optional;
 
+import org.springframework.stereotype.Component;
+
 import ar.edu.unju.fi.model.Docente;
 
-
+@Component
 public class ListaDocente {
 private ArrayList<Docente> docentes;
 	
