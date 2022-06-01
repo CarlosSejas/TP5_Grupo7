@@ -4,6 +4,8 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 
+import org.springframework.stereotype.Component;
+@Component
 public class Alumno {
 	@Min(value=1000000 ,message="el dni debe ser mayor a 1000000")
 	private int dni;
