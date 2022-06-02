@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+	<title>Edicion Beca</title>
+</head>
+<body>
+	<header th:replace="/layouts/header::header"></header>
+	<div class="cont">
+		<div class="container col-4">
+			<br>
+			<p class="h4">Alta de beca</p>
+			<br>
+			<form th:action="@{/becas/modificar}" method="POST" th:object="${beca}">
+				<div class="mb-3">
+					<label for="codigoId" class="form-label">Codigo</label> 
+					<input  th:field="*{codigo}" type="number" class="form-control" id="codigoId" placeholder="Ingrese codigo" disabled="disabled">
+					<input type="hidden" th:field="*{codigo}">
+				</div>
+				<div class="mb-3">
+					<label for="cursoId" class="form-label">Curso</label>
+					<select th:field="*{curso.codigo}" class="form-control" id="cursoId">
+						<option th:each="curso : ${cursos}"
+							th:value="${curso.codigo}"
+							th:text="${curso.titulo}"
+						/>
+					</select>
+					<div class="text-danger" th:if="${#fields.hasErrors('curso')}" th:errors="*{curso}"></div>
+				</div>
+				<div class="mb-3">
+					<label for="finicioId" class="form-label">Fecha de inicio</label> 
+				 	<input  th:field="*{finicio}" type="date" class="form-control" id="finicioId" placeholder="Ingrese apellidos">
+					<div class="text-danger" th:if="${#fields.hasErrors('finicio')}" th:errors="*{finicio}"></div>
+				</div>
+				<div class="mb-3">
+					<label for="fcierreId" class="form-label">Fecha de cierre</label> 
+					  <input th:field="*{fcierre}" type="date" class="form-control" id="fcierreId" placeholder="Ingrese e-mail">
+						<div class="text-danger" th:if="${#fields.hasErrors('fcierre')}" th:errors="*{fcierre}"></div>
+				</div>
+				<div class="mb-3">
+					<label for="estadoId" class="form-label">Estado</label> 
+					<input th:field="*{estado}" type="text" class="form-control" id="estadoId" placeholder="Ingrese estado">
+					<div class="text-danger" th:if="${#fields.hasErrors('estado')}" th:errors="*{estado}"></div>
+				</div>
+				<div class="mb-3">
+				</div>
+				<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+					<button class="btn btn-primary me-md-2" type="submit">Editar</button>
+					 <a th:href="@{/inicio}" id="cancel" class="btn btn-secondary">Cancelar</a>
+	  				
+				</div>
+			</form>
+		</div>
+		<br><br>
+</div>
+	
+	
+	<footer th:replace="/layouts/footer::footer"></footer>
+
+    <script src="/webjars/jquery/jquery.min.js" type="text/javascript"></script>
+	<script src="/webjars/popper.js/umd/popper.min.js" type="text/javascript"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+			
+</body>
+</html>

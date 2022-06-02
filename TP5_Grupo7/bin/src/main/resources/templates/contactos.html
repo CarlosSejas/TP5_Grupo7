@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+	<title>
+		
+	</title>
+</head>
+
+<!-- CLASE PRACTICA DE Programacion visual-->
+
+<body>
+
+<header th:replace="/layouts/header::header"></header>
+<div class="cont">
+<div class="contenedor">
+<div class="form">
+
+
+<form action="#">
+
+  <div class="mb-3">
+  
+    <label for="nombre" class="form-label">Nombre y Apellido:</label>
+   <input type="text" class="form-control" placeholder="Ingrese nombre y apellido" name="nombre">
+  </div>
+   <label for="nombre" class="form-label">Provincia:</label>
+  <select class="form-select" name="provincia">
+ 	<option value="jujuy" >Jujuy</option>
+    	<option value="Buenos Aires">Buenos Aires</option>
+    	<option value="Santa Fe">Santa Fe</option>
+        <option value="La Rioja">La Rioja</option>
+        <option value="Chaco">Chaco</option>
+        <option value="Santiago de Estero">Santiago del Estero</option>
+        <option value="Salta">Salta</option>
+        <option value="Tucuman">Tucuman</option>
+        <option value="Tierra del Fuego">Tierra del Fuego</option>
+        <option value="Cordoba">Cordoba</option>
+        <option value="Neuquen">Neuquen</option>
+        <option value="Corrientes">Corrientes</option>
+        <option value="La Pampa">La Pampa</option>
+        <option value="Santa Cruz">Santa Cruz</option>
+        <option value="Rio Negro">Rio Negro</option>
+        <option value="San Juan">San Juan</option>
+        <option value="Formosa">Formosa</option>
+        <option value="Catamarca">Catamarca</option>
+        <option value="Mendoza">Mendoza</option>
+        <option value="San Luis">San Luis</option>
+        <option value="Entre Rios">Entre Rios</option>
+        <option value="Misiones">Misiones</option>
+        <option value="Chubut">Chubut</option>
+</select>
+  <div class="mb-3">
+    <label for="telefono" class="form-label">Telefono:</label>
+   <input type="text" class="form-control" placeholder="Ingrese telefono">
+  </div>
+   <div class="mb-3 mt-3">
+    <label for="email" class="form-label">Email:</label>
+    <input type="email" class="form-control" id="email" placeholder="Ingrese email" name="email">
+  </div>
+  
+   <label for="telefono" class="form-label">Estado civil:</label>
+  <div class="form-check">
+  <input type="radio" class="form-check-input" id="radio1" name="optradio" value="casado" checked>Casado
+  <label class="form-check-label" for="radio1"></label>
+</div>
+<div class="form-check">
+  <input type="radio" class="form-check-input" id="radio2" name="optradio" value="soltero">Soltero
+  <label class="form-check-label" for="radio2"></label>
+</div>
+<div class="form-check">
+<input type="radio" class="form-check-input" id="radio2" name="optradio" value="otro">otro
+  <label class="form-check-label" for="option3"></label>
+</div>
+  <label for="comment">Mensaje:</label>
+<textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+  
+  
+  
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+</div>
+
+</div>
+</div>
+<footer th:replace="/layouts/footer::footer"></footer>
+	
+	<script src="/webjars/jquery/jquery.min.js" type="text/javascript"></script>
+	<script src="/webjars/popper.js/umd/popper.min.js" type="text/javascript"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
+
+
+</body>
+<!-- static/{images,videos}-->
+
+
+</html>

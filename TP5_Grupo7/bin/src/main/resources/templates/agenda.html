@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+	
+		<title>Agenda</title>
+	</head>
+	<body>
+		<header th:replace="/layouts/header::header"></header>
+		<div class="cont">
+		  	<div class="container">
+		  		<h1 class= "bg-primary bg-gradient">CALENDARIO 2022</h1>
+				<img alt="aquí un calendario" src="/images/calendario.jpg" title="un calendario" width="100%" >
+		  		
+		  			  	
+				<section>
+					<p class="lead text-center">
+						<br/>¿Sabías que ...?<br/>
+						La risa es un calmante natural ya que potencia la segregación de endorfinas,<br/>
+						unas sustancias que sirven para aliviar el dolor.<br/>
+						Se ha demostrado que reir nos ayuda a combatir el estrés, propicia la relajación<br/>
+						y el bienestar general.<br/>
+						La risoterapia es una técnica que busca producir beneficios mentales y emocionales<br/>
+						por medio de la risa.<br/><br/>
+					</p>
+				</section>
+				<div class="ratio ratio-16x9">
+					<video src="/videos/video.mp4" controls="controls"></video>
+				</div>	
+			</div>
+		</div>
+		<footer th:replace="/layouts/footer::footer"></footer>
+		<script src="/webjars/jquery/jquery.min.js" type="text/javascript"></script>
+		<script src="/webjars/popper.js/umd/popper.min.js" type="text/javascript"></script>
+		<script src="/webjars/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+	</body>
+</html>

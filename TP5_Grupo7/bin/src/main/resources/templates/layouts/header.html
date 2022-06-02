@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+<header th:fragment="header" id="head">
+	<div class="container-fluid">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+				   <div class="visiv " >
+      <span class="navbar-toggler-icon"><img id ="logo-curso" src="/images/curso.png"/></span>
+    </div>
+    <a class="btn btn-warning" href="#">Cursos De Capacitacion</a>
+    
+				    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+				      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+				       <li class="nav-item">
+				          <a class="nav-link active element" aria-current="page"  th:href="@{/inicio}">Inicio</a>
+				        </li>
+				      
+				        <li class="nav-item">
+				          <a class="nav-link active element" aria-current="page" th:href="@{/agenda}">Agenda</a>
+				        </li>
+				        <li class="nav-item">
+				          <a class="nav-link active element" th:href="@{/beneficios}">Beneficios y Becas</a>
+				        </li>
+				        <li class="nav-item">
+				          <a class="nav-link active element" aria-current="page" th:href="@{/contactos}">Contáctanos</a>
+				        </li>
+				        <li class="nav-item dropdown">
+				          <a class="nav-link dropdown-toggle element" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+				            Datos
+				          </a>
+				          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+				            <li><a class="dropdown-item" th:href="@{/docente/lista}">Docentes</a></li>
+				            <li><a class="dropdown-item" th:href="@{/alumno/lista}">Alumnos</a></li>
+				            <li><hr class="dropdown-divider"></li>
+				            <li><a class="dropdown-item" th:href="@{/becas/listaBecas}">Becas</a></li>
+				            <li><a class="dropdown-item" th:href="@{/curso/lista}">Cursos</a></li>
+				          </ul>
+				        </li>
+				  
+				      </ul>
+				     
+				    </div>
+				    	</nav>
+			  </div>
+		
+
+</header>
+</body>
+</html>

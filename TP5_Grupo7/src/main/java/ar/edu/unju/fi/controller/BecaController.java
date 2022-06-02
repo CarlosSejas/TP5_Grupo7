@@ -99,7 +99,7 @@ public class BecaController {
 	}
 	
 	@GetMapping("/eliminar/{codigo}")
-	public ModelAndView eliminarBeca(@PathVariable("codigo")int codigo) {
+	public ModelAndView eliminarBeca(@PathVariable(value="codigo")int codigo) {
 		becaService.eliminarBeca(codigo);
 		ModelAndView mav = new ModelAndView("redirect:/becas/listaBecas");
 	return mav;
